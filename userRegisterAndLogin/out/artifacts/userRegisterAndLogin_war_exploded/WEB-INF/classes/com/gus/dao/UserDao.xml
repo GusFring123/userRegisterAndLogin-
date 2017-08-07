@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- namespace命名空间，作用就是对sql进行分类化管理，理解sql隔离
+注意：使用mapper代理方法开发，namespace有特殊重要的作用，namespace等于mapper接口地址
+-->
+<mapper namespace="com.gus.dao.UserDao">
+
+    <insert id="addUser" parameterType="user">
+        <selectKey keyProperty="id" order="AFTER" resultType="int">
+            SELECT LAST_INSERT_ID()
+        </selectKey>
+        INSERT INTO user (username, password, nickname, email, create_time)VALUES (#{username},
+        #{password}, #{nickname}, #{email}, now())
+    </insert>
+    
+    <select id="findUserByUsername" parameterType="string" resultType="user">
+        SELECT * FROM user WHERE username = #{username}
+    </select>
+
+    <select id="findUserByUNAndPSW" resultType="user">
+        SELECT * FROM user WHERE username = #{username} AND password = #{password}
+    </select>
+
+</mapper>

@@ -1,0 +1,9 @@
+           commons-beanutils-1.9.3.jar
+           commons-collections-3.2.2.jar
+           commons-logging-1.2.jar
+           mybatis-3.4.4.jar
+           mysql-connector-java-5.1.42-bin.jar
+           taglibs-standard-compat-1.2.5.jar
+           taglibs-standard-impl-1.2.5.jar
+           taglibs-standard-jstlel-1.2.5.jar
+           taglibs-standard-spec-1.2.5.jar

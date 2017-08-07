@@ -1,0 +1,40 @@
+1.这是一个关于用户登录与注册，注销的小例子。
+2.功能有：
+    用户登录
+        |
+        |-记住用户名
+        |-根据用户名与密码查询user
+
+    用户注册
+        |
+        |-校验参数是否为空，格式是否正确，两次密码是否一致--这些功能在user中，让它自己去做
+        |-校验用户名是否重复在service层，调用dao层与数据库打交道。
+        |-提供注册后直接登录的功能
+        |-提供验证码的功能，验证码的校验在servlet中做
+    用户注销
+        |
+        |-注销直接调用servlet销毁session
+3.导入的jar包：
+        web-lib中：
+
+           commons-beanutils-1.9.3.jar
+           commons-collections-3.2.2.jar
+           commons-logging-1.2.jar
+           mybatis-3.4.4.jar
+           mysql-connector-java-5.1.42-bin.jar
+           taglibs-standard-compat-1.2.5.jar
+           taglibs-standard-impl-1.2.5.jar
+           taglibs-standard-jstlel-1.2.5.jar
+           taglibs-standard-spec-1.2.5.jar
+
+       扩展lib：
+       hamcrest-core-1.3.jar
+       junit-4.12.jar
+       jsp-api.jar
+       servlet-api.jar
+4.这里的例子是采用了javaWeb经典三层架构
+即： web层
+    service层
+    dao层
+
+5.结合mybatis框架
